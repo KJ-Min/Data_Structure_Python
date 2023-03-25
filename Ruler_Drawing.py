@@ -7,9 +7,17 @@ def draw_ruler(n_inches, major_length):
 
 def draw_interval(central_length):
     if central_length >= 1:
-        draw_interval(central_length - 1)
-        draw_line(central_length)
-        draw_interval(central_length - 1)
+        result = 0
+        for j in range(central_length):
+            result = result * 2 + 1
+
+        for k in range(1, result + 1):
+            if k % 2 == 1:
+                draw_line(1)
+            else:
+                for i in range(central_length - 1):
+                    if k % (4 * (2**i)) == 2 ** (i + 1):
+                        draw_line(i + 2)
 
 
 def draw_line(tick_length, tick_label=-1):
