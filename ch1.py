@@ -1,17 +1,8 @@
-print("1부터 n까지 정수의 합을 구합니다.")
-n = int(input("n값을 입력하세요.: "))
+area = int(input("직사각형의 넓이를 입력하세요.: "))
 
-
-while True:
-    n = int(input("n값을 입력하세요.: "))
-    if n > 0:
+for i in range(1, area + 1):
+    if i * i > area:
         break
-
-sum = 0
-i = 1
-
-for i in range(1, n + 1):
-    sum += i
-    i += 1
-
-print(f"1부터 {n}까지의 정수의 합은 {sum}입니다.")
+    if area % i:
+        continue
+    print(f"{i} x {area //i}")
