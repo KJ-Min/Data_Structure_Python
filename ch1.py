@@ -1,20 +1,10 @@
 def med3(a, b, c):
-    if a > b:
-        if b >= c:
-            return b
-        elif c >= a:
-            return a
-        else:
-            return c
-
-    elif a > c:
+    if (b >= a and a >= c) or (c >= a and a >= b):
         return a
-
-    elif b > c:
-        return c
-
-    else:
+    elif (a >= b and b >= c) or (c > b and b >= a):
         return b
+    else:
+        return c
 
 
 print("세 정수를 입력하세요.")
