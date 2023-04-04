@@ -1,10 +1,11 @@
-n = int(input("정수를 입력하세요.: "))
+print("1부터 n까지 정수의 합을 구합니다.")
+n = int(input("n값을 입력하세요.: "))
 
-if n == 1:
-    print("A")
-elif n == 2:
-    print("B")
-elif n == 3:
-    print("C")
-else:
-    pass
+sum = 0
+i = 1
+
+while i <= n:
+    sum += i
+    i += 1
+
+print(f"1부터 {n}까지의 정수의 합은 {sum}입니다.")
