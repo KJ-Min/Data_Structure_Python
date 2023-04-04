@@ -8,6 +8,10 @@ if a > b:
 sum = 0
 
 for i in range(a, b + 1):
+    if i < b:
+        print(f"{i} + ", end="")
+    else:
+        print(f"{i} = ", end="")
     sum += i
 
-print(f"{a}부터 {b}까지의 정수의 합은 {sum}입니다.")
+print(sum)
