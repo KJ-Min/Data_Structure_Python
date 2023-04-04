@@ -1,16 +1,10 @@
-print("a부터 b까지 정수의 합을 구합니다.")
-a = int(input("정수 a를 입력하세요.: "))
-b = int(input("정수 b를 입력하세요.: "))
+print("+와 -를 번갈아 출력합니다.")
+n = int(input("몇 개를 출력할까요?: "))
 
-if a > b:
-    a, b = b, a
+for _ in range(n // 2):
+    print("+-", end="")
 
-sum = 0
+if n % 2:
+    print("+", end="")
 
-for i in range(a, b):
-    print(f"{i} + ", end="")
-    sum += i
-
-print(f"{b} = ", end="")
-sum += b
-print(sum)
+print()
