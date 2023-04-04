@@ -1,8 +1,12 @@
-area = int(input("직사각형의 넓이를 입력하세요.: "))
+import random
 
-for i in range(1, area + 1):
-    if i * i > area:
+n = int(input("난수의 개수를 입력하세요.: "))
+
+for _ in range(n):
+    r = random.randint(10, 99)
+    print(r, end=" ")
+    if r == 13:
+        print("\n프로그램을 중단합니다.")
         break
-    if area % i:
-        continue
-    print(f"{i} x {area //i}")
+else:
+    print("\n난수 생성을 종료합니다.")
