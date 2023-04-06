@@ -1,17 +1,14 @@
+import random
 from max import max_of
 
-print("배열의 최댓값을 구합니다.")
-print('주의: "End"를 입력하면 종료합니다.')
+print("난수의 최댓값을 구합니다.")
+num = int(input("난수의 개수를 입력하세요.: "))
+lo = int(input("난수의 최솟값을 입력하세요.: "))
+hi = int(input("난수의 최댓값을 입력하세요.: "))
+x = [None] * num
 
-number = 0
-x = []
+for i in range(num):
+    x[i] = random.randint(lo, hi)
 
-while True:
-    s = input(f"x[{number}]값을 입력하세요.: ")
-    if s == "End":
-        break
-    x.append(int(s))
-    number += 1
-
-print(f"{number}개를 입력했습니다.")
-print(f"최댓값은 {max_of(x)}입니다.")
+print(f"{x}")
+print(f"이 가운데 최댓값은 {max_of(x)}입니다.")
