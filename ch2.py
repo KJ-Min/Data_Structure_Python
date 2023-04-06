@@ -1,14 +1,22 @@
-import random
-from max import max_of
+from typing import Any, MutableSequence
 
-print("난수의 최댓값을 구합니다.")
-num = int(input("난수의 개수를 입력하세요.: "))
-lo = int(input("난수의 최솟값을 입력하세요.: "))
-hi = int(input("난수의 최댓값을 입력하세요.: "))
-x = [None] * num
 
-for i in range(num):
-    x[i] = random.randint(lo, hi)
+def reverse_array(a: MutableSequence) -> None:
+    n = len(a)
+    for i in range(n // 2):
+        a[i], a[n - i - 1] = a[n - i - 1], a[i]
 
-print(f"{x}")
-print(f"이 가운데 최댓값은 {max_of(x)}입니다.")
+
+if __name__ == "__main__":
+    print("배열 원소를 역순으로 정렬합니다.")
+    nx = int(input("원소 수를 입력하세요.: "))
+    x = [None] * nx
+
+    for i in range(nx):
+        x[i] = int(input(f"x[{i}]값을 입력하세요.: "))
+
+    reverse_array(x)
+
+    print("배열 원소를 역순으로 정렬했습니다.")
+    for i in range(nx):
+        print(f"x[{i}] = {x[i]}")
