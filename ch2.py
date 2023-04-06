@@ -1,20 +1,17 @@
-from typing import Any, Sequence
+from max import max_of
 
+print("배열의 최댓값을 구합니다.")
+print('주의: "End"를 입력하면 종료합니다.')
 
-def max_of(a: Sequence) -> Any:
-    maximum = a[0]
-    for i in range(1, len(a)):
-        if a[i] > maximum:
-            maximum = a[i]
-    return maximum
+number = 0
+x = []
 
+while True:
+    s = input(f"x[{number}]값을 입력하세요.: ")
+    if s == "End":
+        break
+    x.append(int(s))
+    number += 1
 
-if __name__ == "__main__":
-    print("배열의 최댓값을 구합니다.")
-    num = int(input("원소 수를 입력하세요.: "))
-    x = [None] * num
-
-    for i in range(num):
-        x[i] = int(input(f"x[{i}]값을 입력하세요.: "))
-
-    print(f"최댓값은 {max_of(x)}입니다.")
+print(f"{number}개를 입력했습니다.")
+print(f"최댓값은 {max_of(x)}입니다.")
