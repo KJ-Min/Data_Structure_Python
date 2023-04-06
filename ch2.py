@@ -1,11 +1,19 @@
 counter = 0
+ptr = 0
+prime = [None] * 500
 
-for n in range(2, 1001):
-    for i in range(2, n):
+prime[ptr] = 2
+ptr += 1
+
+for n in range(3, 1001, 2):
+    for i in range(1, ptr):
         counter += 1
-        if n % i == 0:
+        if n % prime[i] == 0:
             break
     else:
-        print(n)
+        prime[ptr] = n
+        ptr += 1
 
+for i in range(ptr):
+    print(prime[i])
 print(f"나눗셈을 실행한 횟수: {counter}")
