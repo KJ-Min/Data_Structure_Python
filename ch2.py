@@ -1,22 +1,30 @@
-from typing import Any, MutableSequence
+def card_conv(x: int, r: int) -> str:
+    d = ""
+    dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+    while x > 0:
+        d += dchar[x % r]
+        x //= r
 
-def reverse_array(a: MutableSequence) -> None:
-    n = len(a)
-    for i in range(n // 2):
-        a[i], a[n - i - 1] = a[n - i - 1], a[i]
+    return d[::-1]
 
 
 if __name__ == "__main__":
-    print("배열 원소를 역순으로 정렬합니다.")
-    nx = int(input("원소 수를 입력하세요.: "))
-    x = [None] * nx
+    print("10진수를 n진수로 변환합니다.")
 
-    for i in range(nx):
-        x[i] = int(input(f"x[{i}]값을 입력하세요.: "))
+    while True:
+        while True:
+            no = int(input("변환할 값으로 음이 아닌 정수를 입력하세요.: "))
+            if no > 0:
+                break
 
-    reverse_array(x)
+        while True:
+            cd = int(input("어떤 진수로 변환할까요?: "))
+            if 2 <= cd <= 36:
+                break
 
-    print("배열 원소를 역순으로 정렬했습니다.")
-    for i in range(nx):
-        print(f"x[{i}] = {x[i]}")
+        print(f"{cd}진수로는 {card_conv(no,cd)}입니다.")
+
+        retry = input("한 번 더 변환할까요?(Y ... 예 / N ... 아니요): ")
+        if retry in {"N", "n"}:
+            break
